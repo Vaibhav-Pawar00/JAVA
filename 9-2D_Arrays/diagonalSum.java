@@ -17,7 +17,7 @@ public class diagonalSum {
             }
         }
         */
-        // optimized method
+        // optimized method - O(n) complexity
         int n = matrix.length-1;
         for(int i=0; i<matrix.length; i++){
             // Primary Diagonal
