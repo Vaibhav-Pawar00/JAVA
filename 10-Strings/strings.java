@@ -28,6 +28,29 @@ public class strings {
         // System.out.println(fullName);
         printString(fullName);
 
+
+        // String Comparison
+        String s1 = "Tony";
+        String s2 = "Tony";
+        String s3 = new String("Tony");
+
+        if (s1==s2) {      // -----------> returns true
+            System.out.println("Strings are equal");            
+        }else{
+            System.out.println("Strings are not equal!!");
+        }    
+        /*
+        if (s1 == s3) {   // -----------> returns false since checks object as new object is created 
+        System.out.println("Strings are equal");
+        }else{
+        System.out.println("Strings are not equal!!");
+        }*/
+        if(s1.equals(s3)){ // -----------> returns true checks since used - .equal function and compared inside value not object.
+            System.out.println("Strings are equal ");
+        }else{
+            System.out.println("Not equal");
+        }
+
         // sc.close();
 
     }    
