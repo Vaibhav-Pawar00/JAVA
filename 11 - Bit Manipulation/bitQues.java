@@ -42,13 +42,25 @@ public class bitQues {
         return n | bitMask;
     }
 
+    public static int clearIBits(int n, int i){
+        int bitMask = (-1)<<i;
+        return n & bitMask;
+    }
+
+    public static int clearRangeofIBits(int n, int i, int j){
+        int a = (-1) << j+1; 
+        int b = (1<<i) - 1;
+        int bitMask = a|b;
+        return n&bitMask;
+    }
+
     public static void main(String []args){
         // Odd or Even using Bit Manioulation
         oddOrEven(3);
         oddOrEven(17);
         oddOrEven(26);
 
-        // get ith Bit - get the what is there in the ith postion 0 or 1
+        // get ith Bit - get the what is there in the ith position 0 or 1
         System.out.println(getIthBit(10, 2));
 
         // set ith bit - set or change the ith bit to 0 if 1 or 1 if 0
@@ -60,5 +72,11 @@ public class bitQues {
         // update ith bit
         System.out.println(updateIthBit(10, 2, 1));
 
+        // clear last ith bith - clear the last ith bits to 0
+        System.out.println(clearIBits(15, 2));
+
+        // clear the range of ith bit (from ith position to jth position)
+        System.out.println(clearRangeofIBits(10, 2, 4));
+        System.out.println(clearRangeofIBits(2515, 2, 7));
     }
 }
