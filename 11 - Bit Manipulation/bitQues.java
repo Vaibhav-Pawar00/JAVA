@@ -54,6 +54,22 @@ public class bitQues {
         return n&bitMask;
     }
 
+    public static boolean isPowerof2(int n){
+        return (n & (n-1)) == 0;
+    }
+
+    public static int fastExpo(int a, int n){
+        int ans = 1;
+        while(n>0){
+            if((n&1) != 0){
+                ans *= a;
+            }
+            a = a*a;
+            n = n>>1;
+        }
+        return ans;
+    }
+
     public static void main(String []args){
         // Odd or Even using Bit Manioulation
         oddOrEven(3);
@@ -78,5 +94,12 @@ public class bitQues {
         // clear the range of ith bit (from ith position to jth position)
         System.out.println(clearRangeofIBits(10, 2, 4));
         System.out.println(clearRangeofIBits(2515, 2, 7));
+
+        // check if the number is power of 2 or not
+        System.out.println(isPowerof2(8));
+        System.out.println(isPowerof2(15));
+
+        // calculate fast exponentiation --> (a,n) -> a to the power n
+        System.out.println(fastExpo(5, 3));
     }
 }
